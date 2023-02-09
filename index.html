@@ -9,6 +9,74 @@
 <body>
     <script>
         'use strict'
+        /*
+        1) Создайте класс Plane со свойствами name и isFlying (по-умолчанию false) и методами takeOff() и land(). Метод takeOff() меняет значение свойства isFlying на true, а метод land() меняет значение свойства isFlying на false.
+
+        Создайте объект airport со свойством planes (массив объектов класса Planes ) и методом getFlyingPlanes(), который вовзращающий количество элементов из массива planes , у которых isFlying равняется true.
+
+        Cоздайте несколько объектов на основе класса Plane и добавьте их в массив самолетов в airport. Измените любым объектам значение isFlying на true; Продемонстрируйте метод getFlyingPlanes() в работе.
+
+        Изменение isFlying сделайте при помощи кнопки по нпжптию на которую будет менятся кол-во самолетов в воздухе, тоесть братся значение getFlyingPlanes
+        */
+       class Plane {
+        constructor(name, isFlying) { //= false
+            this.name = name;
+            this.isFlying = isFlying;
+        }
+
+        get takeOff() {
+            return this.isFlying = true;
+        }
+
+        get land() {
+            return this.isFlying = false;
+        }
+
+        get getFlyingPlanes() {
+            return
+        }
+       }
+
+       let airport = {
+            planes: [
+                new Plane('Boeing', false),
+                new Plane('Airbus', true),
+                new Plane('Мрія', true),
+            ],
+            getFlyingPlanes() {
+                //return this.planes.length;
+            }
+       }
+       console.log(airport);
+
+
+       //2.
+
+       class User {
+        constructor(name, surname) {
+            this.name = name;
+            this.surname = surname;
+        }
+        get getFullName() {
+            return `${this.name} ${this.surname}`;
+        }
+       }
+
+       class Student extends User {
+        constructor(name, surname, year, currentYear) {
+            super(name, surname);
+            this.year = year;
+            this.currentYear = currentYear;
+        }
+        get getCourse() {
+            return this.currentYear - this.year;
+        }
+       }
+
+       const user = new User ('Alex', 'Smith');
+       const student = new Student ('Dean', 'Winchester', 2018, 2023);
+       console.log(`full name: ${student.getFullName}`);
+       console.log(`current course: ${student.getCourse}`);
     </script>
 </body>
 </html>

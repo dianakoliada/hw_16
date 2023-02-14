@@ -6,15 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home work 16</title>
     <style>
-        body {
-            background: rgb(255,255,255);
-            background: linear-gradient(rgba(255,255,255,1) 0%, rgba(0,212,255,1) 100%);
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
         }
+
+        body {
+            background-color: #ade8f4;
+        }
+
+        div {
+            margin: 10% auto;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            text-transform: uppercase;
+            display: inline-block;
+            width: 300px;
+            line-height: 50px;
+            border: none;
+            border-radius: 10px;
+            transition: all .5s;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        button:hover{
+            cursor: pointer;
+            transform: scale(.9);
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            transition: all .5s;
+        }
+
+
     </style>
 </head>
 <body>
-    <div>
-        <button id="button">In air</button>
+    <div class="page__item">
+        <button id="button" type="button">in air</button>
     </div>
     <script>
     'use strict'
@@ -80,7 +116,6 @@
     btn.addEventListener('click', () => {
         airport.getFlyingPlanes();
     });
-
 
     //2.
     class User {
